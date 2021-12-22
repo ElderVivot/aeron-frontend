@@ -1,9 +1,9 @@
-import Header from '../../components/Header'
+import { LayoutDefault } from '@components/_LayoutDefault'
 
 export default function IndexTenant (): JSX.Element {
     return (
         <>
-            <Header/>
+            <LayoutDefault/>
         </>
     )
 }
