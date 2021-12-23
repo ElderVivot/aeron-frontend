@@ -12,7 +12,7 @@ export function THeadComponent (props: IProps): JSX.Element {
     return (
         <Thead>
             {props.headerGroups.map((headerGroup, key) => (
-                <Tr key={key} bg={'cyan.100'} {...headerGroup.getHeaderGroupProps()}>
+                <Tr key={key} bg={'gray.100'} {...headerGroup.getHeaderGroupProps()}>
                     {headerGroup.headers.map((column, key) => (
                         <Th key={key} padding={0.3} fontSize={'fs'} textAlign={'center'} textTransform={'none'} h={'3.5rem'}
                             maxW={column.width} minW={column.width} w={column.width}

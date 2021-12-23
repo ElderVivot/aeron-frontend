@@ -14,7 +14,7 @@ export function TBodyComponent (props: IProps): JSX.Element {
             {props.rows.map((row, key) => {
                 props.prepareRow(row)
                 return (
-                    <Tr key={key} {...row.getRowProps()} bgColor={key % 2 === 0 ? '' : 'cyan.100'} _hover={{ backgroundColor: 'cyan.400' }}>
+                    <Tr key={key} {...row.getRowProps()} bgColor={key % 2 === 0 ? '' : 'gray.50'} _hover={{ backgroundColor: 'gray.300' }}>
                         {row.cells.map((cell, key) => (
                             <Td key={key} padding={0.3} fontSize={'fs'} textAlign={'center'} fontWeight={400}
                                 maxW={cell.column.width} minW={cell.column.width} w={cell.column.width}

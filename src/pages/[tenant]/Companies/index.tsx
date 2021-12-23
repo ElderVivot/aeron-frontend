@@ -5,8 +5,7 @@ import { Text } from '@chakra-ui/react'
 import { THeaderGroup } from '@common/types/ReactTable'
 import { DefaultColumnFilter } from '@components/_ColumnFilter'
 import { LayoutDefault } from '@components/_LayoutDefault'
-import { TableComponent } from '@components/_Table'
-import { FilterComponent } from '@components/LogNotaFiscal/Filters'
+import { TableComponent } from '@components/_Table/'
 
 import { columnsHeader } from './_columns_header'
 import { data as dataFetch } from './_fetch_data'
@@ -23,8 +22,7 @@ export default function LogNotesGO (): JSX.Element {
 
     return (
         <LayoutDefault>
-            <Text fontSize={'lg'} textAlign={'center'} my={3} fontWeight={500}>Resultado do processamento NF-e, NFC-e, CT-e</Text>
-            <FilterComponent ml={2} />
+            <Text fontSize={'lg'} textAlign={'center'} my={3} fontWeight={500}>Cadastros de Empresas</Text>
             <TableComponent
                 getTableProps={getTableProps} headerGroups={headerGroups}
                 getTableBodyProps={getTableBodyProps} rows={rows} prepareRow={prepareRow}

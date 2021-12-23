@@ -6,7 +6,7 @@ export function DefaultColumnFilter (props: TFilterProps<object>): JSX.Element {
 
     return (
         <Input
-            bgColor={'cyan.50'} fontSize={'fs'} p={1} height={6} textAlign={'center'}
+            bgColor={'white'} fontSize={'fs'} p={1} height={6} textAlign={'center'}
             value={column.filterValue || ''}
             onChange={e => {
                 column.setFilter(e.target.value || undefined) // Set undefined to remove the filter entirely
