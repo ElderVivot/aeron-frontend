@@ -1,15 +1,14 @@
 import { useMemo } from 'react'
 import { useTable, useSortBy, Column, useFilters } from 'react-table'
 
+import { data as dataFetch } from '@api/LogNotaFiscal/_fetch_data'
 import { Text } from '@chakra-ui/react'
 import { THeaderGroup } from '@common/types/ReactTable'
 import { DefaultColumnFilter } from '@components/_ColumnFilter'
 import { LayoutDefault } from '@components/_LayoutDefault'
 import { TableComponent } from '@components/_Table'
+import { columnsHeader } from '@components/LogNotaFiscal/_columns_header'
 import { FilterComponent } from '@components/LogNotaFiscal/Filters'
-
-import { columnsHeader } from './_columns_header'
-import { data as dataFetch } from './_fetch_data'
 
 export default function LogNotesGO (): JSX.Element {
     const data = useMemo(() => dataFetch, [])
