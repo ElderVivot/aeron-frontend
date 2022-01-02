@@ -1,4 +1,4 @@
-import { Thead, Tr, Th, TableHeadProps, chakra, Flex, Box } from '@chakra-ui/react'
+import { TableHeadProps, chakra, Flex, Box, Thead, Th, Tr } from '@chakra-ui/react'
 import { THeaderGroup } from '@common/types/ReactTable'
 import { faArrowCircleUp, faArrowCircleDown, faArrowsAltV } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,17 +8,17 @@ interface IProps extends TableHeadProps {
 }
 
 export function THeadComponent (props: IProps): JSX.Element {
-    console.log(props)
     return (
-        <Thead>
+        <Thead position={'sticky'} top={0}>
             {props.headerGroups.map((headerGroup, key) => (
-                <Tr key={key} bg={'gray.100'} {...headerGroup.getHeaderGroupProps()}>
+                <Tr key={key} bg={'palette.2'} {...headerGroup.getHeaderGroupProps()} position={'sticky'} top={0}>
                     {headerGroup.headers.map((column, key) => (
                         <Th key={key} padding={0.3} fontSize={'fs'} textAlign={'center'} textTransform={'none'} h={'3.5rem'}
                             maxW={column.width} minW={column.width} w={column.width}
-                            border={'1px solid #718096'}
+                            border={'1px solid #718096'} position={'sticky'} top={0}
                         >
-                            <Flex h={'3.5rem'} direction={'column'} justifyContent={column.disableFilters ? 'center' : 'flex-end'} alignItems={'center'}>
+                            <Flex h={'3.5rem'} direction={'column'}
+                                justifyContent={column.disableFilters ? 'center' : 'flex-end'} alignItems={'center'}>
                                 <Flex justifyContent={'center'} alignItems={'center'}>
                                     {column.render('Header')}
                                     <chakra.span ml={1} {...column.getHeaderProps(column.getSortByToggleProps())} title='Clique aqui pra ordenar'>
@@ -29,7 +29,7 @@ export function THeadComponent (props: IProps): JSX.Element {
                                             : (<FontAwesomeIcon icon={faArrowsAltV} size='sm' />)}
                                     </chakra.span>
                                 </Flex>
-                                <Box w={'98%'} >{column.disableFilters ? null : column.render('Filter')}</Box>
+                                <Box w={'98%'}>{column.disableFilters ? null : column.render('Filter')}</Box>
                             </Flex>
                         </Th>
                     ))}

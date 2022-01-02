@@ -19,9 +19,9 @@ export function ButtonMenu (props: IProps): JSX.Element {
     return (
         <Menu >
             <MenuButton
-                bgColor={'cyan.100'}
-                _hover={{ backgroundColor: 'cyan.400' }}
-                _expanded={{ backgroundColor: 'cyan.400' }}
+                bgColor={'palette.1'}
+                _hover={{ backgroundColor: 'palette.4' }}
+                _expanded={{ backgroundColor: 'palette.4' }}
                 as={Button}
                 cursor={'pointer'}
                 rightIcon={<ChevronDownIcon />}
@@ -32,7 +32,7 @@ export function ButtonMenu (props: IProps): JSX.Element {
                 {itemsMenu.map((obj, key) => (
                     <MenuItem
                         key={key}
-                        _hover={{ backgroundColor: 'cyan.400' }}
+                        _hover={{ backgroundColor: 'palette.4' }}
                     >
                         <Link href={obj.hrefLink} as={obj.asLink}>{obj.name}</Link>
                     </MenuItem>

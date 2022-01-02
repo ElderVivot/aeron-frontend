@@ -20,7 +20,7 @@ export function Header (props: BoxProps): JSX.Element {
     const { tenant } = router.query
 
     return (
-        <Box as="header" {...props} bg={'cyan.300'} px={4}>
+        <Box as="header" {...props} bg={'palette.3'} px={4} zIndex={100}>
             <Flex h={16} alignItems={'center'} justifyContent={'space-between'} >
                 <HStack spacing={10} alignItems={'center'}>
                     <Link href="/[tenant]" as={`/${tenant}`} passHref={true}>

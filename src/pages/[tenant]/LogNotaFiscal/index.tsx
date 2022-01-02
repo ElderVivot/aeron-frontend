@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { useTable, useSortBy, Column, useFilters } from 'react-table'
 
-import { data as dataFetch } from '@api/LogNotaFiscal/_fetch_data'
+import { data as dataFetch } from '@api/tenant/LogNotaFiscal/_fetch_data'
 import { Text } from '@chakra-ui/react'
 import { THeaderGroup } from '@common/types/ReactTable'
 import { DefaultColumnFilter } from '@components/_ColumnFilter'

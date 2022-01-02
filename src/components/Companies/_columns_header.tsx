@@ -18,7 +18,7 @@ export const columnsHeader = [
     },
     {
         Header: 'Nome Empresa',
-        accessor: 'nameCompanie',
+        accessor: 'name',
         width: '16.1%'
     },
     {
@@ -59,7 +59,7 @@ export const columnsHeader = [
     },
     {
         Header: 'Insc. Municipal',
-        accessor: 'countryRegistration',
+        accessor: 'cityRegistration',
         width: '6.1%'
     },
     {
@@ -70,7 +70,7 @@ export const columnsHeader = [
         Cell: ({ value }: ICellProps): string => (formatDate(value, "yyyy-MM-dd'T'HH:mm:ss.SSSxxx", 'dd/MM/yyyy'))
     },
     {
-        Header: 'Início Como Cliente',
+        Header: 'Fim Como Cliente',
         accessor: 'dateFinalAsClient',
         width: '6.1%',
         disableFilters: true,
