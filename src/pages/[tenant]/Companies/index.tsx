@@ -1,4 +1,4 @@
-import { GetServerSidePropsContext, GetStaticPaths, GetStaticProps } from 'next'
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 import { useRouter } from 'next/router'
 import { PropsWithChildren, useMemo } from 'react'
 import { useTable, useSortBy, Column, useFilters } from 'react-table'
@@ -42,7 +42,7 @@ export default function Companies ({ dataFetch }: IProps): JSX.Element {
         <LayoutDefault>
             {!router.isReady
                 ? (
-                    <Heading as='h3' size='lg'>Carregando</Heading>
+                    <Heading as='h3' size='md'>Carregando...</Heading>
                 )
                 : (
                     <Box>
@@ -67,11 +67,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
     return {
         paths,
-        fallback: true
+        fallback: false
     }
 }
 
-export const getStaticProps: GetStaticProps = async (context: GetServerSidePropsContext) => {
+export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
     const tenant: string = context.params?.tenant
     const data = await fetchDataCompanies(tenant)
 
