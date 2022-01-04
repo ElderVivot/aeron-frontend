@@ -79,6 +79,7 @@ export const getStaticProps: GetStaticProps = async (context: GetStaticPropsCont
     return {
         props: {
             dataFetch: data
-        }
+        },
+        revalidate: 1800
     }
 }
