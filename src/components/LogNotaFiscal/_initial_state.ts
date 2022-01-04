@@ -4,13 +4,13 @@ export const initialState = {
             id: 'codeCompanieAccountSystem',
             desc: false
         }, {
-            id: 'dateStartDown',
-            desc: false
-        }, {
             id: 'modelNotaFiscal',
             desc: false
         }, {
             id: 'situationNotaFiscal',
+            desc: false
+        }, {
+            id: 'dateStartDown',
             desc: false
         }
     ]
