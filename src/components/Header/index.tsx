@@ -13,6 +13,7 @@ import {
     BoxProps
 } from '@chakra-ui/react'
 
+import { getCompetenceMain } from '../LogNotaFiscal/_utils'
 import { ButtonMenu } from './ButtonMenu'
 
 export function Header (props: BoxProps): JSX.Element {
@@ -50,8 +51,8 @@ export function Header (props: BoxProps): JSX.Element {
                             itemsMenu={[
                                 {
                                     name: 'Notas NFe, NFCe, CTe',
-                                    hrefLink: '/[tenant]/LogNotaFiscal',
-                                    asLink: `/${tenant}/LogNotaFiscal`
+                                    hrefLink: `/[tenant]/LogNotaFiscal/${getCompetenceMain()}`,
+                                    asLink: `/${tenant}/LogNotaFiscal/${getCompetenceMain()}`
                                 }
                             ]}
                         />

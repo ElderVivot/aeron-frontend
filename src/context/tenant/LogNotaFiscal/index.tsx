@@ -1,8 +1,10 @@
 import { createContext, useState, useContext, Dispatch, SetStateAction, PropsWithChildren } from 'react'
 
 import { formatDate } from '@common/utils/functions'
-import { IDataPageLogNotaFiscal } from '@components/LogNotaFiscal/_IDataPage'
 
+interface IDataPageLogNotaFiscal {
+    competence: string
+}
 interface IUseDataPageLogNotaFiscal {
     dataPage: IDataPageLogNotaFiscal
     setDataPage: Dispatch<SetStateAction<IDataPageLogNotaFiscal>>
