@@ -21,8 +21,10 @@
             "@api/*": ["./src/api/*"],
             "@common/*": ["./src/common/*"],
             "@components/*": ["./src/components/*"],
-            "@pages/*": ["./src/@pages/*"],
-            "@types/*": ["./src/@types/*"]
+            "@pages/*": ["./src/pages/*"],
+            "@types/*": ["./src/@types/*"],
+            "@hooks/*": ["./src/hooks/*"],
+            "@context/*": ["./src/context/*"]
         },
         "typeRoots": [
             "./node_modules/@types",

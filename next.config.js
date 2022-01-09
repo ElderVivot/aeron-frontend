@@ -5,5 +5,8 @@ module.exports = {
         // your project has type errors.
         // !! WARN !!
         ignoreBuildErrors: true
+    },
+    env: {
+        API_HOST: 'https://api.bayhero.com.br/v1'
     }
 }

@@ -7,12 +7,16 @@ import { makeDateImplementation } from '@common/adapters/date/date-factory'
  * @returns new string date in format 'yyyy-mm-dd'
  * @example formatDate('01/01/2021', 'dd/mm/yyyy', 'yyyy-mm-dd') -> '2021-01-01'
  */
-export function formatDate (dateString: string, inputFormat = 'dd/MM/yyyy', outputFormat = 'yyyy-MM-dd'): string | null {
+export function formatDate (dateOriginal: string | Date, inputFormat = 'dd/MM/yyyy', outputFormat = 'yyyy-MM-dd'): string | null {
+    const dateFactory = makeDateImplementation()
     try {
-        if (!dateString) return null
-        const dateFactory = makeDateImplementation()
-        const date = dateFactory.parseDate(dateString, inputFormat)
-        return dateFactory.formatDate(date, outputFormat)
+        if (!dateOriginal) return null
+
+        if (dateOriginal instanceof Date) return dateFactory.formatDate(dateOriginal, outputFormat)
+        else {
+            const date = dateFactory.parseDate(dateOriginal, inputFormat)
+            return dateFactory.formatDate(date, outputFormat)
+        }
     } catch (error) {
         console.log(error)
         return null
