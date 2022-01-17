@@ -10,4 +10,4 @@ export function getCompetenceMain (): string {
     return competence
 }
 
-export const competencesToDown = [getCompetenceMain(), '202201']
+export const competencesToDown = [getCompetenceMain(), '202112']

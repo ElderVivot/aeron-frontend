@@ -50,7 +50,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
     const tenant: string = context.params?.tenant
-    const competence: string = context.params?.competence || '202112'
+    const competence: string = context.params?.competence || getCompetenceMain()
     const data = await fetchDataLogNotaFiscal(tenant, competence)
 
     if (!data) {
