@@ -34,6 +34,7 @@ export const columnsHeader = [
             if (value === '55') return 'NF-e'
             else if (value === '65') return 'NFC-e'
             else if (value === '57') return 'CT-e'
+            else return value
         },
         Filter: (props: TFilterProps<object>): JSX.Element => <SelectColumnFilter optionsSelect={{ 55: 'NF-e', 65: 'NFC-e', 57: 'CT-e' }} {...props}/>
     },
@@ -42,8 +43,10 @@ export const columnsHeader = [
         accessor: 'situationNotaFiscal',
         width: '5.1%',
         Cell: ({ value }: ICellProps): string => {
-            if (value === '1') return 'Normal'
+            if (value === '0') return 'Todos'
+            else if (value === '1') return 'Normal'
             else if (value === '2') return 'Cancelada'
+            else return value
         },
         Filter: (props: TFilterProps<object>): JSX.Element => <SelectColumnFilter optionsSelect={{ 1: 'Normal', 2: 'Cancelada' }} {...props}/>
     },
@@ -64,6 +67,7 @@ export const columnsHeader = [
             else if (value === 'warning') return <Box bg={'purple.400'} rounded={5} my={0.5} mx={2} fontWeight={500}>Aviso</Box>
             else if (value === 'error') return <Box bg={'red.400'} rounded={5} my={0.5} mx={2} fontWeight={500}>Erro</Box>
             else if (value === 'to_process') return <Box bg={'pink.400'} rounded={5} my={0.5} mx={2} fontWeight={500}>Na Fila</Box>
+            else return <Box rounded={5} my={0.5} mx={2} fontWeight={500}>{value}</Box>
         },
         Filter: (props: TFilterProps<object>): JSX.Element => (
             <SelectColumnFilter
