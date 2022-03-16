@@ -1,9 +1,11 @@
 import { CellProps } from 'react-table'
 
-import { Box } from '@chakra-ui/react'
+import { Box, Button } from '@chakra-ui/react'
 import { TFilterProps } from '@common/types/ReactTable'
 import { formatDate } from '@common/utils/functions'
 import { SelectColumnFilter } from '@components/_ColumnFilter'
+import { faEye } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 interface ICellProps extends CellProps<any> {
     value: string
@@ -99,6 +101,20 @@ export const columnsHeader = [
     {
         Header: 'Informação adicional',
         accessor: 'messageLogToShowUser',
-        width: '27.1%'
+        width: '25.1%'
+    },
+    {
+        Header: 'Print',
+        accessor: 'urlPrintLog',
+        width: '2.0%',
+        disableFilters: true,
+        Cell: ({ value }: ICellProps): JSX.Element => {
+            return <Button as={'a'}
+                href={value} target="_blank" rel="noopener noreferrer"
+                isDisabled={!value} rounded={5} my={0.5} mx={2} h={'0'}
+            >
+                <FontAwesomeIcon icon={faEye} size='sm'/>
+            </Button>
+        }
     }
 ]

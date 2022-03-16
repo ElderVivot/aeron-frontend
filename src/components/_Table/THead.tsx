@@ -9,7 +9,7 @@ interface IProps extends TableHeadProps {
 
 export function THeadComponent (props: IProps): JSX.Element {
     return (
-        <Thead position={'sticky'} top={0}>
+        <Thead position={'sticky'} top={0} zIndex={1}>
             {props.headerGroups.map((headerGroup, key) => (
                 <Tr key={key} bg={'palette.2'} {...headerGroup.getHeaderGroupProps()} position={'sticky'} top={0}>
                     {headerGroup.headers.map((column, key) => (
