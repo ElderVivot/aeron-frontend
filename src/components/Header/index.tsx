@@ -53,6 +53,10 @@ export function Header (props: BoxProps): JSX.Element {
                                     name: 'Notas NFe, NFCe, CTe',
                                     hrefLink: `/[tenant]/LogNotaFiscal/${getCompetenceMain()}`,
                                     asLink: `/${tenant}/LogNotaFiscal/${getCompetenceMain()}`
+                                }, {
+                                    name: 'NFS-e Pref Goiânia',
+                                    hrefLink: `/[tenant]/LogNfsPrefGyn/${getCompetenceMain()}`,
+                                    asLink: `/${tenant}/LogNfsPrefGyn/${getCompetenceMain()}`
                                 }
                             ]}
                         />
