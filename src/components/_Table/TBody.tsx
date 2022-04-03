@@ -4,14 +4,14 @@ import { Tbody, Tr, Td } from '@chakra-ui/react'
 
 interface IProps extends TableBodyProps{
     getTableBodyProps: (propGetter?: TableBodyPropGetter<object>) => TableBodyProps
-    rows: Row<object>[]
+    page: Row<object>[]
     prepareRow: (row: Row<object>) => void
 }
 
 export function TBodyComponent (props: IProps): JSX.Element {
     return (
         <Tbody {...props.getTableBodyProps()} zIndex={-1}>
-            {props.rows.map((row, key) => {
+            {props.page.map((row, key) => {
                 props.prepareRow(row)
                 return (
                     <Tr key={key} {...row.getRowProps()} zIndex={-1} bgColor={key % 2 === 0 ? '' : 'palette.2.2'} _hover={{ backgroundColor: 'palette.2' }}>

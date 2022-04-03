@@ -1,11 +1,12 @@
 
 import { PropsWithChildren, useMemo } from 'react'
-import { useTable, useSortBy, Column, useFilters } from 'react-table'
+import { useTable, useSortBy, Column, useFilters, usePagination } from 'react-table'
 
 import { ILogNotaFiscal } from '@api/tenant/LogNotaFiscal/ILogNotaFiscal'
 import { Text, Box } from '@chakra-ui/react'
 import { THeaderGroup } from '@common/types/ReactTable'
 import { DefaultColumnFilter } from '@components/_ColumnFilter'
+import { PaginationComponent } from '@components/_Pagination'
 import { TableComponent } from '@components/_Table'
 
 import { columnsHeader } from './_columns_header'
@@ -22,9 +23,13 @@ export function LogNotaFiscal ({ dataFetch }: IProps): JSX.Element {
     const defaultColumn = useMemo(() => ({ Filter: DefaultColumnFilter, disableFilters: false }), [])
     const initialState = useMemo(() => initialStateData, [])
 
-    const tableInstance = useTable({ columns, data: dataMemo, defaultColumn, initialState }, useFilters, useSortBy)
+    const tableInstance = useTable({ columns, data: dataMemo, defaultColumn, initialState }, useFilters, useSortBy, usePagination)
 
-    const { getTableProps, getTableBodyProps, rows, prepareRow } = tableInstance
+    const {
+        getTableProps, getTableBodyProps, prepareRow, page, nextPage, previousPage, canNextPage, canPreviousPage,
+        pageOptions, state, gotoPage, pageCount
+    } = tableInstance
+
     const headerGroups: THeaderGroup<object>[] = tableInstance.headerGroups
 
     return (
@@ -33,8 +38,11 @@ export function LogNotaFiscal ({ dataFetch }: IProps): JSX.Element {
             <FilterComponent ml={2}/>
             <TableComponent
                 getTableProps={getTableProps} headerGroups={headerGroups}
-                getTableBodyProps={getTableBodyProps} rows={rows} prepareRow={prepareRow}
-                heightToSubtractOfContentBody='190px'
+                getTableBodyProps={getTableBodyProps} page={page} prepareRow={prepareRow}
+                heightToSubtractOfContentBody='215px'
+            />
+            <PaginationComponent previousPage={previousPage} nextPage={nextPage} canPreviousPage={canPreviousPage} canNextPage={canNextPage}
+                pageOptions={pageOptions} pageIndex={state.pageIndex} gotoPage={gotoPage} pageCount={pageCount}
             />
         </Box>
     )

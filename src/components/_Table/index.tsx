@@ -10,20 +10,21 @@ interface IPropsTable extends TablePropsChakra {
     getTableProps: (propGetter?: TablePropGetter<object>) => TableProps
     headerGroups: THeaderGroup<object>[]
     getTableBodyProps: (propGetter?: TableBodyPropGetter<object>) => TableBodyProps
-    rows: Row<object>[]
     prepareRow: (row: Row<object>) => void
     heightToSubtractOfContentBody: string
+    page: Array<Row<object>>
 }
 
 export function TableComponent (props: IPropsTable): JSX.Element {
-    const { getTableProps, headerGroups, getTableBodyProps, rows, prepareRow, heightToSubtractOfContentBody } = props
+    const { getTableProps, headerGroups, getTableBodyProps, prepareRow, heightToSubtractOfContentBody, page } = props
 
     return (
         <Box overflow={'auto'} maxH={calc.subtract(`100vh - ${heightToSubtractOfContentBody}`)} width={'98.4vw'} ml={2}>
             <Table {...getTableProps()} >
                 <THeadComponent headerGroups={headerGroups} />
-                <TBodyComponent getTableBodyProps={getTableBodyProps} rows={rows} prepareRow={prepareRow}/>
+                <TBodyComponent getTableBodyProps={getTableBodyProps} page={page} prepareRow={prepareRow}/>
             </Table>
+
         </Box>
     )
 }

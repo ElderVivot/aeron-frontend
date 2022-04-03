@@ -1,4 +1,6 @@
-export const initialState = {
+import { TableState } from 'react-table'
+
+export const initialState: Partial<TableState<object>> = {
     sortBy: [
         {
             id: 'codeCompanieAccountSystem',
@@ -13,5 +15,6 @@ export const initialState = {
             id: 'dateStartDown',
             desc: false
         }
-    ]
+    ],
+    pageSize: 300
 }
