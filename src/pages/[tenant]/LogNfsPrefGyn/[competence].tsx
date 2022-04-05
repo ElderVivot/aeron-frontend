@@ -8,7 +8,6 @@ import { ILogNfsPrefGyn } from '@api/tenant/LogNfsPrefGyn/ILogNfsPrefGyn'
 import { Heading } from '@chakra-ui/react'
 import { LayoutDefault } from '@components/_LayoutDefault'
 import { LogNfsePrefGynComponent } from '@components/LogNfsPrefGyn'
-import { LogNotaFiscal as LogNotaFiscalComponent } from '@components/LogNotaFiscal'
 import { getCompetenceMain } from '@components/LogNotaFiscal/_utils'
 
 interface IProps extends PropsWithChildren<object> {
