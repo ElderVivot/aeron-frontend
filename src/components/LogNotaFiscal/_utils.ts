@@ -1,4 +1,4 @@
-import { formatDate } from '@common/utils/functions'
+import { formatDate } from '@common/utils/functions'//
 
 export function getCompetenceMain (): string {
     const today = new Date()
