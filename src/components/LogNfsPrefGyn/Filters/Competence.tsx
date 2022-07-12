@@ -12,7 +12,7 @@ export function CompetenceComponent (props: FormControlProps): JSX.Element {
     const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const competenceEvent = event.target.value
         router.push({
-            pathname: `/[tenant]/LogNotaFiscal/${competenceEvent}`,
+            pathname: `/[tenant]/LogNfsPrefGyn/${competenceEvent}`,
             query: { tenant: router.query.tenant }
         })
     }
