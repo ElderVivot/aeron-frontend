@@ -8,7 +8,7 @@ import { ILogNotaFiscal } from '@api/tenant/LogNotaFiscal/ILogNotaFiscal'
 import { Heading } from '@chakra-ui/react'
 import { LayoutDefault } from '@components/_LayoutDefault'
 import { LogNotaFiscal as LogNotaFiscalComponent } from '@components/LogNotaFiscal'
-import { getCompetenceMain } from '@components/LogNotaFiscal/_utils'
+import { getCompetenceMain, getCompetenceMainSubTwo } from '@components/LogNotaFiscal/_utils'
 
 interface IProps extends PropsWithChildren<object> {
     dataFetch: ILogNotaFiscal[]
@@ -34,7 +34,7 @@ export default function LogNotesGoias ({ dataFetch }: IProps): JSX.Element {
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const data = await fetchDataClients()
-    const competences = [getCompetenceMain()]
+    const competences = [getCompetenceMain(), getCompetenceMainSubTwo()]
 
     const paths = []
 
