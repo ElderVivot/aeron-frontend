@@ -17,7 +17,7 @@ function getDatesDown (competence: string): string {
 
 export const fetchDataLogNotaFiscal = async (tenant: string, competence: string): Promise<ILogNotaFiscal[] | null> => {
     try {
-        const url = `${process.env.API_HOST}/log_nota_fiscal?${getDatesDown(competence)}`
+        const url = `${process.env.API_HOST}/log_nota_fiscal/frontend?${getDatesDown(competence)}`
         const result = await axios.get(url, { headers: { tenant } })
         return result.data
     } catch (error) {
