@@ -8,7 +8,7 @@ import { ILogNfsPrefGyn } from '@api/tenant/LogNfsPrefGyn/ILogNfsPrefGyn'
 import { Heading } from '@chakra-ui/react'
 import { LayoutDefault } from '@components/_LayoutDefault'
 import { LogNfsePrefGynComponent } from '@components/LogNfsPrefGyn'
-import { getCompetenceMain } from '@components/LogNotaFiscal/_utils'
+import { getCompetenceMain, getCompetenceMainSubTwo } from '@components/LogNfsPrefGyn/_utils'
 
 interface IProps extends PropsWithChildren<object> {
     dataFetch: ILogNfsPrefGyn[]
@@ -34,7 +34,7 @@ export default function LogNfsPrefGyn ({ dataFetch }: IProps): JSX.Element {
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const data = await fetchDataClients()
-    const competences = [getCompetenceMain()]
+    const competences = [getCompetenceMain(), getCompetenceMainSubTwo()]
 
     const paths = []
 
