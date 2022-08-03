@@ -2,7 +2,7 @@ import axios from 'axios'
 
 import { formatDate } from '@common/utils/functions'
 
-import { ILogNotaFiscal } from './ILogNotaFiscal'//
+import { ILogNotaFiscal } from './ILogNotaFiscal'
 
 function getDatesDown (competence: string): string {
     try {
