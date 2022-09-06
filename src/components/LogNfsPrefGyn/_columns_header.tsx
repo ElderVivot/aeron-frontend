@@ -19,10 +19,9 @@ export const columnsHeader = [
         filter: 'equals'
     },
     {
-        Header: 'Inscrição Estadual',
+        Header: 'Inscrição Municipal',
         accessor: 'cityRegistration',
-        width: '5%',
-        filter: 'equals'
+        width: '5%'
     },
     {
         Header: 'Nome Empresa',
