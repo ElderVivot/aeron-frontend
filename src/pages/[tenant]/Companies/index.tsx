@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'//
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 import { useRouter } from 'next/router'
 import { PropsWithChildren } from 'react'
 
@@ -13,7 +13,7 @@ interface IProps extends PropsWithChildren<object> {
     dataFetch: ICompanie[]
 }
 
-export default function Companies ({ dataFetch }: IProps): JSX.Element {
+export default function Companies({ dataFetch }: IProps): JSX.Element {
     const router = useRouter()
 
     if (!router.isReady) {
