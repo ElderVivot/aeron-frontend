@@ -14,7 +14,7 @@ interface IProps extends PropsWithChildren<object> {
     dataFetch: ILogNfsPrefGyn[]
 }
 
-export default function LogNfsPrefGyn ({ dataFetch }: IProps): JSX.Element {
+export default function LogNfsPrefGyn({ dataFetch }: IProps): JSX.Element {
     const router = useRouter()
 
     if (!router.isReady) {
@@ -27,7 +27,7 @@ export default function LogNfsPrefGyn ({ dataFetch }: IProps): JSX.Element {
 
     return (
         <LayoutDefault>
-            <LogNfsePrefGynComponent dataFetch={dataFetch}/>
+            <LogNfsePrefGynComponent dataFetch={dataFetch} />
         </LayoutDefault>
     )
 }
