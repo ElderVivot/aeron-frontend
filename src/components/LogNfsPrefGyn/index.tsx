@@ -1,5 +1,5 @@
 
-import { PropsWithChildren, useMemo } from 'react'
+import { PropsWithChildren, useMemo } from 'react'//
 import { useTable, useSortBy, Column, useFilters, usePagination } from 'react-table'
 
 import { ILogNfsPrefGyn } from '@api/tenant/LogNfsPrefGyn/ILogNfsPrefGyn'
@@ -17,7 +17,7 @@ interface IProps extends PropsWithChildren<object> {
     dataFetch: ILogNfsPrefGyn[]
 }
 
-export function LogNfsePrefGynComponent ({ dataFetch }: IProps): JSX.Element {
+export function LogNfsePrefGynComponent({ dataFetch }: IProps): JSX.Element {
     const dataMemo = useMemo(() => dataFetch || [], [dataFetch])
     const columns: Column[] = useMemo(() => columnsHeader, [])
     const defaultColumn = useMemo(() => ({ Filter: DefaultColumnFilter, disableFilters: false }), [])
@@ -35,7 +35,7 @@ export function LogNfsePrefGynComponent ({ dataFetch }: IProps): JSX.Element {
     return (
         <Box>
             <Text fontSize={'lg'} textAlign={'center'} my={2} fontWeight={500}>Resultado do processamento NFS-e de Goiânia</Text>
-            <FilterComponent ml={2}/>
+            <FilterComponent ml={2} />
             <TableComponent
                 getTableProps={getTableProps} headerGroups={headerGroups}
                 getTableBodyProps={getTableBodyProps} page={page} prepareRow={prepareRow}
