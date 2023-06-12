@@ -1,5 +1,5 @@
 
-import { PropsWithChildren, useMemo } from 'react'//
+import { PropsWithChildren, useMemo } from 'react'
 import { useTable, useSortBy, Column, useFilters, usePagination } from 'react-table'
 
 import { ILogNfsPrefGyn } from '@api/tenant/LogNfsPrefGyn/ILogNfsPrefGyn'
