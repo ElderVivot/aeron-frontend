@@ -14,7 +14,7 @@ interface IProps extends PropsWithChildren<object> {
     dataFetch: ILogNotaFiscal[]
 }
 
-export default function LogNotesGoias ({ dataFetch }: IProps): JSX.Element {
+export default function LogNotesGoias({ dataFetch }: IProps): JSX.Element {
     const router = useRouter()
 
     if (!router.isReady) {
@@ -27,7 +27,7 @@ export default function LogNotesGoias ({ dataFetch }: IProps): JSX.Element {
 
     return (
         <LayoutDefault>
-            <LogNotaFiscalComponent dataFetch={dataFetch}/>
+            <LogNotaFiscalComponent dataFetch={dataFetch} />
         </LayoutDefault>
     )
 }
@@ -63,6 +63,6 @@ export const getStaticProps: GetStaticProps = async (context: GetStaticPropsCont
         props: {
             dataFetch: data
         },
-        revalidate: 1800
+        revalidate: 60 * 20
     }
 }

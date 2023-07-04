@@ -13,7 +13,7 @@ interface IProps extends PropsWithChildren<object> {
     dataFetch: ICertificate[]
 }
 
-export default function Certificates ({ dataFetch }: IProps): JSX.Element {
+export default function Certificates({ dataFetch }: IProps): JSX.Element {
     const router = useRouter()
 
     if (!router.isReady) {
@@ -58,6 +58,6 @@ export const getStaticProps: GetStaticProps = async (context: GetStaticPropsCont
         props: {
             dataFetch: data
         },
-        revalidate: 14400
+        revalidate: 60 * 20
     }
 }
