@@ -7,6 +7,6 @@ module.exports = {
         ignoreBuildErrors: true
     },
     env: {
-        API_HOST: 'https://api.bayhero.com.br/v1'
+        API_HOST: 'http://18.223.183.219/v1'
     }
 }
